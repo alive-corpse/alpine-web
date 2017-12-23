@@ -1,6 +1,6 @@
 #!/bin/sh
 
-/usr/sbin/php-fpm7
+/usr/bin/php-fpm5
 chown -R nobody:nobody /var/www/lock
 /usr/sbin/nginx
 

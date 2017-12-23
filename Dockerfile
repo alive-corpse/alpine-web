@@ -5,9 +5,8 @@ MAINTAINER Evgeniy Shumilov <evgeniy.shumilov@gmail.com>
 
 ADD entry.sh /usr/local/bin
 
-RUN apk update && apk add nginx php7-fpm php7-json php7-gd php7-mysqli php7-pdo_mysql php7-dom php7-curl php7-mcrypt php7-pcntl php7-posix curl
+RUN apk update && apk add nginx php5-fpm php5-json php5-gd php5-mysqli php5-pdo_mysql php5-dom php5-curl php5-mcrypt php5-pcntl php5-posix php5-openssl curl
 RUN mkdir /tmp/client_body && mkdir /tmp/fastcgi_temp && chown -R nobody:nobody /var/www && chown nobody:nobody /tmp/* && chmod +x /usr/local/bin/entry.sh
-RUN sed -i 's/^listen .*/listen = 127.0.0.1:9000/' /etc/php7/php-fpm.d/www.conf
 
 ADD nginx.conf /etc/nginx
 
